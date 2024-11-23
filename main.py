@@ -6,7 +6,7 @@ from flask_bootstrap import Bootstrap5
 import requests
 from forms import EditForm, AddMovie
 from found_movie import FoundMovie
-
+import os
 '''
 Red underlines? Install the required packages first: 
 Open the Terminal in PyCharm (bottom left). 
@@ -20,10 +20,11 @@ pip3 install -r requirements.txt
 This will install the packages from requirements.txt for this project.
 '''
 
-MOVIE_API_KEY = "9ededdd512893df75cd073dfc0870025"
+MOVIE_API_KEY = os.environ['MOVIE_API_KEY']
+
 headers = {
             "accept": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZWRlZGRkNTEyODkzZGY3NWNkMDczZGZjMDg3MDAyNSIsIm5iZiI6MTczMjM2MTI0Mi4wODY5NTUzLCJzdWIiOiI2NzQxYmFlOTMyYTlhYWY0M2Q5NmFmNjEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.dsllAaETta7Hgc3anVKBGB9Tc6vNPDVgpcmmWgxyCh8"
+            "Authorization": f"{os.environ['AUTH_THEMOVIE_DB']}"
         }
 app = Flask(__name__)
 Bootstrap5(app)
