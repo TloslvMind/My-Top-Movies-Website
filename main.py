@@ -7,18 +7,7 @@ import requests
 from forms import EditForm, AddMovie
 from found_movie import FoundMovie
 import os
-'''
-Red underlines? Install the required packages first: 
-Open the Terminal in PyCharm (bottom left). 
 
-On Windows type:
-python -m pip install -r requirements.txt
-
-On MacOS type:
-pip3 install -r requirements.txt
-
-This will install the packages from requirements.txt for this project.
-'''
 
 MOVIE_API_KEY = os.environ['MOVIE_API_KEY']
 
